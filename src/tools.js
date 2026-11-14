@@ -67,6 +67,7 @@ export async function callTool(name, args = {}) {
         service_count: svc.length,
         payment: r.json.how_to_pay,
         free_surfaces: r.json.free_surfaces,
+        integrations: r.json.integrations,
         services: svc,
         text: lines.join('\n'),
       });
