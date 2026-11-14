@@ -12,7 +12,13 @@ const bin = path.join(here, '..', 'bin', 'akari-x402.js');
 const tool = process.argv[2] || 'funding_edge_preview';
 const args = process.argv[3] ? JSON.parse(process.argv[3]) : {};
 
-const child = spawn(process.execPath, [bin], { stdio: ['pipe', 'pipe', 'pipe'] });
+// AKARI_TEST_CMD lets the same harness exercise a real host install line, e.g.
+//   AKARI_TEST_CMD="npx -y github:edvyno/akari-x402" node test/mcp_stdio_test.mjs
+const cmdParts = (process.env.AKARI_TEST_CMD || '').trim().split(/\s+/).filter(Boolean);
+const command = cmdParts.length ? cmdParts[0] : process.execPath;
+const commandArgs = cmdParts.length ? cmdParts.slice(1) : [bin];
+
+const child = spawn(command, commandArgs, { stdio: ['pipe', 'pipe', 'pipe'] });
 
 let buf = '';
 const pending = new Map();

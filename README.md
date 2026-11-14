@@ -11,7 +11,10 @@ No account, no API key, no signup. Prices are per call, settled in USDC.
 npx -y akari-x402
 ```
 
-If the npm package is not resolvable yet, the same code installs straight from git:
+**Status of the npm name (honest):** the package is published to the official MCP registry as
+`io.github.edvyno/akari-x402` (remote: the stable origin's `/mcp`), but the **npm** package is **not
+published yet** — this desk has no npm credentials and npm 2FA is not bypassed. Until it is, the
+install line that has actually been executed end to end is the git spec:
 
 ```bash
 npx -y github:edvyno/akari-x402
