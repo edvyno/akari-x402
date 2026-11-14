@@ -1,0 +1,47 @@
+{
+  "name": "akari-x402",
+  "version": "1.0.0",
+  "mcpName": "io.github.edvyno/akari-x402",
+  "description": "MCP server for Akari Agent Services: free funding-edge and token-safety previews, the machine service list, and an x402 paid-call helper that surfaces the 402 challenge and can pay it with a key from env.",
+  "type": "module",
+  "bin": {
+    "akari-x402": "bin/akari-x402.js"
+  },
+  "exports": {
+    ".": "./src/tools.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "server.json",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "x402",
+    "http-402",
+    "agents",
+    "hyperliquid",
+    "funding-rate",
+    "crypto-intel",
+    "usdc",
+    "base"
+  ],
+  "dependencies": {
+    "viem": "^2.21.55"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edvyno/akari-x402.git"
+  },
+  "homepage": "https://03s9tr085tfe5agke0tpqng34o.ingress.quanglong.org/ecosystem",
+  "author": "Akari InvestAI (edvyno)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
